@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-    <title>test</title>
-    <link rel="stylesheet" href="test.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+        <title>test</title>
+        <link rel="stylesheet" href="test.css">
+    </head>
     <body>
         <div>
         <div class="Karting_rider_video">
@@ -22,26 +22,20 @@
                 이미지여도 좋고 글이어도 좋습니다.
             </div>
         </div>
-        
-        <script>
-        $(function(){ 
-
-            $(".Karting_rider_video").click(function(){
-              $(".modal").fadeIn();
+            <script>
+            $(function(){
+                $(".Karting_rider_video").click(function(){
+                $(".modal").fadeIn();
+                });
+                
+                $(".modal_content").click(function(){
+                $(".modal").fadeOut();
+                });
             });
-            
-            $(".modal_content").click(function(){
-              $(".modal").fadeOut();
-            });
-            
-          });
-        </script>
+            </script>
         </div>
         <div style="padding: 10px;">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/clMEk_5NXVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-
-
-        
     </body>
 </html>
