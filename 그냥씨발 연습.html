@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>쿠키를 이용해 로그인 해보기!</title>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script>
+    $(function() {
+        $("form").hide(); //버튼을 클릭하기 전까지 폼 숨기기
+        $("#loginBtn").on("click", function() {
+            $("form:last").hide();
+            $("form:first").show(); // 로그인 폼 보이기
+        });
+       
+        $("#regBtn").on("click", function() {
+            $("form:first").hide();
+            $("form:last").show(); // 회원가입 폼 보이기
+        });
+    });
+   
+    //회원가입 양식 체크
+    function check() {
+        var id = document.getElementById("id");
+        var pw = document.getElementById("pw");
+        var pwCheck = document.getElementById("pwCheck");
+        //아이디 유효성 체크
+        if(id.value.length < 3 || id.value.length > 10) {
+            alert("아이디는 3자 이상 10자 이하만 입력해주세요!");
+            id.focus();
+            return false;
+        }
+       
+        //비밀번호 유효성 체크
+        if(pw.value.length < 3 || pw.value.length > 20) {
+            alert("비밀번호는 3자 이상 10자 이하만 입력해주세요!");
+            pw.focus();
+            return false;
+        }
+       
+        //비밀번호 확인 체크
+        if(pw.value != pwCheck.value) {
+            alert("비밀번호가 다릅니다. 확인하고 다시 요청해 주세요!");
+            pwCheck.focus();
+            return false;
+        }
+    }
+</script>
+</head>
+<body>
+    <button id="loginBtn">로그인</button>
+    <button id="regBtn">회원가입</button>
+   
+    <form action="login" method="post">
+        <h1>로그인</h1>
+        아이디 : <input type="text" name="id"/><br/>
+        비밀번호 : <input type="password" name="pw"/><br/>
+        <input type="submit" value="로그인"/>
+    </form>
+    <form action="register" method="post" onsubmit="return check();">
+        <h1>회원가입</h1>
+        아이디 : <input type="text" name="id" id="id" required/><br/>
+        비밀번호 : <input type="password" name="pw" id="pw" required/><br/>
+        비밀번호 확인 : <input type="password" name="pwCheck" id="pwCheck" required/><br/>
+        <input type="submit" value="가입하기"/>
+    </form>
+</body>
+</html>
