@@ -18,9 +18,18 @@
                 <input type="text" id="login" placeholder="Enter Username">
                 <p>Password</p>
                 <input type="password" id="pw"placeholder="Enter Password">
-                <input type="submit" id="sub" value="Login">
+                <input type="submit" id="sub" value="Login" onclick="func_confirm()">
                 <a href="#">Forgot password?</a>
-                <script src="login_log.js"></script>
+                <script>
+                    var link = 'http://gumeho.kro.kr';
+                    function func_confirm(){
+                        if(confirm("로그인 하시겠습니까?")){
+                            location.replace(link);
+                        } else {
+                            alert('ancel');
+                        }
+                    }
+                </script>
             </form>
         </div>
     </body>
