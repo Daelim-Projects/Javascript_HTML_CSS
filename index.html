@@ -1,54 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="타이틀아이콘.png">
-    <title>Sky</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="타이틀아이콘.png">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <title>Sky 서버 - Login</title>
+    </head>
     <body>
-        <div class="hero">
-            <nav>
-                <img src="s_타이틀아이콘.png" class="menu-img">
-                <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="">latest</a></li>
-                    <li><a href="">Modern</a></li>
-                    <li><a href="">Contemporary</a></li>
-                    <li><a href="">Affordable</a></li>
-                </ul>
-                <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
-            </nav>
-
-            <div class="lamp-container">
-                <img src="images/lamp.png" class="lamp">
-                <img src="images/light.png" class="light" id="light">
-            </div>
-
-            <div class="text-container">
-                <h1>Latest in Lighting</h1>
-                <p>This is the first lamp from our company. we're making a huge collection of modern lamps in all categories from home use to office use.</p>
-            <a href="">Check All Collections</a>
-            <div class="control">
-                <p>04</p>
-                <div class="line"><span></span></div>
-                <p>05</p>
-            </div>
-            </div>
-
+        <div class="loginbox">
+            <img src="타이틀아이콘.png" class="avatar">
+            <h1>Login Here</h1>
+            <form>
+                <p>Username</p>
+                <input type="text" id="login" placeholder="Enter Username">
+                <p>Password</p>
+                <input type="password" id="pw"placeholder="Enter Password">
+                <input type="submit" id="sub" value="Login" onclick="func_confirm()">
+                <a href="#">Forgot password?</a>
+                <script>
+                    var link = 'http://gumeho.kro.kr';
+                    function func_confirm(){
+                        if(confirm("로그인 하시겠습니까?")){
+                            location.replace(link);
+                        } else {
+                            alert('ancel');
+                        }
+                    }
+                </script>
+            </form>
+>>>>>>> 71edd0168daebc6ff26e53563341587fbc7421fd
         </div>
-
-
-        <script>
-            var btn = document.getElementById("btn");
-            var light = document.getElementById("light");
-
-            function toggleBtn(){
-                btn.classList.toggle("active")
-                light.classList.toggle("on")
-            }
-        </script>
     </body>
 </html>
