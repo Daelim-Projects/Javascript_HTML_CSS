@@ -8,6 +8,32 @@
         <link rel="shortcut icon" type="image/x-icon" href="타이틀아이콘.png">
         <link rel="stylesheet" type="text/css" href="index.css">
         <title>Sky 서버 - Login</title>
+        <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+        <script>
+        function check() {
+            var id = document.getElementById("id");
+            var pw = document.getElementById("pw");
+            var pwCheck = document.getElementById("pwCheck");
+            //아이디 유효성 체크
+            if(id.value.length < 3 || id.value.length > 10) {
+                alert("ID는 3자 이상 10자 이하만 입력해주세요!");
+                id.focus();
+                return false;
+            }
+            //비밀번호 유효성 체크
+            if(pw.value.length < 3 || pw.value.length > 20) {
+                alert("비밀번호는 3자 이상 10자 이하만 입력해주세요!");
+                pw.focus();
+                return false;
+            }
+            //비밀번호 확인 체크
+            if(pw.value != pwCheck.value) {
+                alert("비밀번호가 다릅니다. 확인하고 다시 요청해 주세요!");
+                pwCheck.focus();
+                return false;
+            }
+        }
+        </script>
     </head>
     <body>
         <div class="loginbox">
@@ -17,7 +43,7 @@
                 <p>Username</p>
                 <input type="text" name="id" placeholder="Enter Username">
                 <p>Password</p>
-                <input type="password" name="password" placeholder="Enter Password">
+                <input type="password" name="pw" placeholder="Enter Password">
                 <input type="submit" name="" value="Login">
                 <a href="#">Forgot password?</a>
             </form>
